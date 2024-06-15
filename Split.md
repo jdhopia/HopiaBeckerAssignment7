@@ -13,3 +13,7 @@ Lucas
 - Write tests for the DSL commands in tests.py
 - Prepare adn deliver the video presentation
 - Review EBNF
+
+
+
+Finish for sunday-
