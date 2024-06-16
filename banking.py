@@ -5,11 +5,11 @@ from bank_account import BankAccount
 
 def initialize_accounts():
     accounts = [
-        BankAccount("Alice", "Smith", "AlSm000001", 1000),
-        BankAccount("Bob", "Brown", "BoBr000002", 1500),
-        BankAccount("Charlie", "Davis", "ChDa000003", 2000),
-        BankAccount("Diana", "Evans", "DiEv000004", 2500),
-        BankAccount("Ethan", "Fisher", "EtFi000005", 3000),
+        BankAccount("Dawn", "Duerre", "DD000001", 1000000),
+        BankAccount("Jayce", "Hopia", "JH000002", 1500),
+        BankAccount("Lucas", "Becker", "LB000003", 2000),
+        BankAccount("Susan", "Furtney", "SF000004", 1750),
+        BankAccount("Golden", "Bear", "GB000005", 10000),
     ]
     return accounts
 
