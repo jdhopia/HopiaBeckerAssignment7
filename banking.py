@@ -8,7 +8,7 @@ def initialize_accounts():
         BankAccount("Dawn", "Duerre", "DD000001", 1000000),
         BankAccount("Jayce", "Hopia", "JH000002", 1500),
         BankAccount("Lucas", "Becker", "LB000003", 2000),
-        BankAccount("Susan", "Furtney", "SF000004", 1750),
+        BankAccount("Susan", "Furtney", "SF000004", 1000000),
         BankAccount("Golden", "Bear", "GB000005", 10000),
     ]
     return accounts
