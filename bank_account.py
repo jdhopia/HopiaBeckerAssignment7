@@ -5,19 +5,15 @@ class BankAccount:
         self.account_number = account_number
         self.balance = float(balance)
 
-    @property
     def first_name(self):
         return self.first_name
 
-    @property
     def last_name(self):
         return self.last_name
 
-    @property
     def account_number(self):
         return self.account_number
 
-    @property
     def balance(self):
         return self.balance
 
