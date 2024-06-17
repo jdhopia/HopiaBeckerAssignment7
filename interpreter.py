@@ -4,7 +4,7 @@ class Interpreter:
         self.account_dict = account_dict
 
     def interpret(self):
-        # This is where you would implement your interpretation logic.
-        # For now, we'll just print out the AST and account dictionary.
+        # implement your interpretation logic.
+        # For now, print out AST and account dictionary.
         print("AST:", self.ast)
         print("Accounts:", self.account_dict)
