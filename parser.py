@@ -11,6 +11,6 @@ class Parser:
             self.current_token = None
 
     def parse(self):
-        # This is where you would implement your parsing logic.
-        # For now, we'll just return the tokens as a list.
+        # implement your parsing logic
+        # For now,return tokens as a list.
         return [token for token in self.tokens]
