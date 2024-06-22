@@ -1,26 +1,39 @@
 class BankAccount:
-    def __init__(self, first_name, last_name, account_number, balance):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.account_number = account_number
-        self.balance = float(balance)
+    def __init__(self, first_name: str, last_name: str, balance: float = 0.0):
+        self._first_name = first_name
+        self._last_name = last_name
+        self._balance = balance
+        self._account_number = self._generate_account_number()
 
+    def _generate_account_number(self) -> str:
+        initials = self._first_name[0] + self._last_name[0]
+        digits = ''.join([str(ord(char)) for char in initials])
+        return initials + digits[:6]
+
+    @property
     def first_name(self):
-        return self.first_name
+        return self._first_name
 
+    @property
     def last_name(self):
-        return self.last_name
+        return self._last_name
 
-    def account_number(self):
-        return self.account_number
-
+    @property
     def balance(self):
-        return self.balance
+        return self._balance
 
-    def deposit(self, amount):
-        self.balance += amount
+    @property
+    def account_number(self):
+        return self._account_number
 
-    def withdraw(self, amount):
-        if amount > self.balance:
+    def deposit(self, amount: float):
+        self._balance += amount
+
+    def withdraw(self, amount: float):
+        if amount <= self._balance:
+            self._balance -= amount
+        else:
             raise ValueError("Insufficient funds")
-        self.balance -= amount
+
+    def __str__(self):
+        return f"{self._first_name} {self._last_name}, Account: {self._account_number}, Balance: {self._balance}"
