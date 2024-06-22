@@ -1,22 +1,24 @@
-import lexer
-import parser
-import interpreter
 from bank_account import BankAccount
-
-def initialize_accounts():
-    accounts = [
-        BankAccount("Dawn", "Duerre", "DD000001", 1000000),
-        BankAccount("Jayce", "Hopia", "JH000002", 1500),
-        BankAccount("Lucas", "Becker", "LB000003", 2000),
-        BankAccount("Susan", "Furtney", "SF000004", 1000000),
-        BankAccount("Golden", "Bear", "GB000005", 10000),
-    ]
-    return accounts
+from lexer import Lexer
+from parser import Parser
+from interpreter import Interpreter
 
 def main():
-    accounts = initialize_accounts()
-    account_dict = {acc.account_number: acc for acc in accounts}
-    print("Program exited.")
+    accounts = [
+        BankAccount("Alice", "Smith", 1000),
+        BankAccount("Bob", "Brown", 1500),
+        BankAccount("Charlie", "Davis", 2000)
+    ]
+
+    lexer = Lexer("create deposit withdraw balance")
+    tokens = lexer.tokenize()
+    parser = Parser(tokens)
+    ast = parser.parse()
+    interpreter = Interpreter(ast)
+    interpreter.interpret()
+
+    for account in accounts:
+        print(account)
 
 if __name__ == "__main__":
     main()
