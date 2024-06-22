@@ -1,8 +1,12 @@
+from ast_node import ASTNode
+
 class Interpreter:
-    def __init__(self, ast, account_dict):
+    def __init__(self, ast: ASTNode):
         self.ast = ast
-        self.account_dict = account_dict
 
     def interpret(self):
-        print("AST:", self.ast)
-        print("Accounts:", self.account_dict)
+        for node in self.ast.children:
+            self._execute_node(node)
+
+    def _execute_node(self, node: ASTNode):
+        print(f"Executing {node.token.value}")
