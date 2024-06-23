@@ -1,0 +1,38 @@
+"""
+Author: Jayce Hopia
+Date: 06/23/2024
+Class: 330
+Description: This file contains the EBNF grammar for the Banking DSL.
+Pledge: This work is all my own with the help of Lucas.
+"""
+
+banking_program          ::= { statement } ;
+
+statement                ::= create_account_statement
+                           | deposit_statement
+                           | withdraw_statement
+                           | balance_statement
+                           | exit_statement ;
+
+create_account_statement ::= "CREATE" "ACCOUNT" name "," name "," account_number "," number ;
+
+deposit_statement        ::= "DEPOSIT" number "TO" account_number ;
+
+withdraw_statement       ::= "WITHDRAW" number "FROM" account_number ;
+
+balance_statement        ::= "BALANCE" "OF" account_number ;
+
+exit_statement           ::= "EXIT" ;
+
+name                     ::= letter { letter | digit } ;
+
+account_number           ::= letter letter digit digit digit digit digit digit ;
+
+number                   ::= digit { digit } [ "." digit { digit } ] ;
+
+letter                   ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" 
+                           | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+                           | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" 
+                           | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+
+digit                    ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
