@@ -1,3 +1,13 @@
+"""
+Author: Jayce Hopia
+Date: 06/23/2024
+Class: 330
+Description: This file contains the BankAccount class for the Banking DSL.
+Pledge: This work is all my own with the help of Lucas.
+"""
+
+import random
+
 class BankAccount:
     def __init__(self, first_name: str, last_name: str, balance: float = 0.0):
         self._first_name = first_name
@@ -7,8 +17,8 @@ class BankAccount:
 
     def _generate_account_number(self) -> str:
         initials = self._first_name[0] + self._last_name[0]
-        digits = ''.join([str(ord(char)) for char in initials])
-        return initials + digits[:6]
+        digits = ''.join([str(random.randint(0, 9)) for _ in range(6)])
+        return initials + digits
 
     @property
     def first_name(self):
